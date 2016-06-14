@@ -1,4 +1,4 @@
-package xiaoliang.lnote;
+package xiaoliang.lnote.activity;
 
 import android.content.Intent;
 import android.os.Handler;
@@ -8,6 +8,8 @@ import android.os.Bundle;
 
 import java.util.Timer;
 import java.util.TimerTask;
+
+import xiaoliang.lnote.R;
 
 public class MainActivity extends AppCompatActivity {
 
