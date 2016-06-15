@@ -5,6 +5,6 @@
     android:fitsSystemWindows="true">
     <include layout="@layout/tool_bar"/>
 
-    <include layout="@layout/content_add" />
+    <include layout="@layout/content_add_type"/>
 
 </android.support.design.widget.CoordinatorLayout>

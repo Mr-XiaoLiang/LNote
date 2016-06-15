@@ -39,6 +39,6 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 handler.sendEmptyMessage(200);
             }
-        }, 2000);//2秒后跳转
+        }, 500);
     }
 }
