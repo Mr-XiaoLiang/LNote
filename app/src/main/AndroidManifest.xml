@@ -14,16 +14,18 @@
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".activity.HomeActivity" />
         <activity android:name=".activity.AddActivity" />
         <activity android:name=".activity.AddTypeActivity" />
-        <activity
-            android:name=".activity.SettingsActivity"
-            android:label="@string/title_activity_settings"></activity>
+        <activity android:name=".activity.SettingsActivity"/>
+        <activity android:name=".activity.AboutActivity" />
+        <service
+            android:name=".service.MyService"
+            android:enabled="true"
+            android:exported="false"/>
     </application>
 
 </manifest>

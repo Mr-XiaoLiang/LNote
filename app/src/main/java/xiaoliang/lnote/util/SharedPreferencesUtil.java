@@ -15,6 +15,9 @@ public class SharedPreferencesUtil {
 
     private static final String SHARED_PREFERENCES_NAME = "LNote";
     private static final String THEME_NAME = "THEME";
+    private static final String DOUBLE_EXIT = "DOUBLE_EXIT";
+    private static final String SYNCHRONIZED_TO_CALENDAR = "SYNCHRONIZED_TO_CALENDAR";
+    private static final String REVERSE_ORDER = "REVERSE_ORDER";
 
     public static <T> boolean put(Context context, String name, T value) {
         try {
@@ -64,6 +67,30 @@ public class SharedPreferencesUtil {
 
     public static boolean setTheme(Context context,int theme){
         return put(context,THEME_NAME,theme);
+    }
+
+    public static boolean setDoubleExit(Context context,boolean b){
+        return put(context,DOUBLE_EXIT,b);
+    }
+
+    public static boolean getDoubleExit(Context context){
+        return (boolean)get(context,DOUBLE_EXIT,true);
+    }
+
+    public static boolean setSynchronizedToCalendar(Context context,boolean b){
+        return put(context,SYNCHRONIZED_TO_CALENDAR,b);
+    }
+
+    public static boolean getSynchronizedToCalendar(Context context){
+        return (boolean)get(context,SYNCHRONIZED_TO_CALENDAR,true);
+    }
+
+    public static boolean setReverseOrder(Context context,boolean b){
+        return put(context,REVERSE_ORDER,b);
+    }
+
+    public static boolean getReverseOrder(Context context){
+        return (boolean)get(context,REVERSE_ORDER,true);
     }
 
 }

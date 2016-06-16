@@ -9,7 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10dp"
         android:focusable="true"
         android:focusableInTouchMode="true">
         <LinearLayout
@@ -37,6 +36,7 @@
                     android:layout_marginTop="5dp"/>
             </LinearLayout>
             <Switch
+                android:id="@+id/setting_double_exit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -68,7 +68,9 @@
                     android:textSize="12sp"
                     android:layout_marginTop="5dp"/>
             </LinearLayout>
+
             <Switch
+                android:id="@+id/setting_synchronized_to_calendar"
                 android:enabled="false"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -78,6 +80,41 @@
             android:layout_height="1px"
             android:background="@android:color/darker_gray"/>
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:gravity="center_vertical">
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="倒序排列"
+                    android:textColor="@android:color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="首页列表按时间倒序排列"
+                    android:textSize="12sp"
+                    android:layout_marginTop="5dp"/>
+            </LinearLayout>
+            <Switch
+                android:id="@+id/setting_reverse_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@android:color/darker_gray"/>
+        <LinearLayout
+            android:background="?android:attr/selectableItemBackground"
+            android:id="@+id/setting_label_management"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -106,5 +143,63 @@
             android:layout_width="match_parent"
             android:layout_height="1px"
             android:background="@android:color/darker_gray"/>
+        <LinearLayout
+            android:background="?android:attr/selectableItemBackground"
+            android:id="@+id/setting_output_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:gravity="center_vertical">
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="数据导出"
+                    android:textColor="@android:color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="导出数据到存储根目录"
+                    android:textSize="12sp"
+                    android:layout_marginTop="5dp"/>
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@android:color/darker_gray"/>
+        <LinearLayout
+            android:background="?android:attr/selectableItemBackground"
+            android:id="@+id/setting_input_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:gravity="center_vertical">
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="数据导入"
+                    android:textColor="@android:color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="从存储空间导入数据文件"
+                    android:textSize="12sp"
+                    android:layout_marginTop="5dp"/>
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

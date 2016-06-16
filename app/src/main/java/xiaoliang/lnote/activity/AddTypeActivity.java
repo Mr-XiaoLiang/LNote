@@ -29,7 +29,7 @@ public class AddTypeActivity extends BaseActivity implements SeekBar.OnSeekBarCh
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_type);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.title_activity_add);
+        toolbar.setTitle(R.string.title_activity_add_type);
         setSupportActionBar(toolbar);
         getWidget();
         backEnable(true);
