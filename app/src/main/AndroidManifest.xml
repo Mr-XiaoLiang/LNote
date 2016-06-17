@@ -23,8 +23,9 @@
         <activity android:name=".activity.SettingsActivity"/>
         <activity android:name=".activity.AboutActivity" />
         <service
-            android:name=".service.MyService"
-            android:enabled="true"
+            android:label="@string/ds_service_label"
+            android:name=".service.DataSyncService"
+            android:enabled="false"
             android:exported="false"/>
     </application>
 
