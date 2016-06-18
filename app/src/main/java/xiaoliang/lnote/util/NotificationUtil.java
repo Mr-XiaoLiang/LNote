@@ -18,11 +18,33 @@ public class NotificationUtil {
 
     private static NotificationManager notificationManager;
 
+    /**
+     * 创建并更新进度条消息
+     * @param context 上下文
+     * @param name 标题
+     * @param msg 详细
+     * @param max 最大进度值
+     * @param progress 当前进度
+     * @param indeterminate 是否循环滚动
+     * @param pendingIntent 点击跳转意图
+     * @param tag 标签（用于多进度消息）
+     */
     public static void updateProgressNotification(Context context,String name,String msg,int max, int progress, boolean indeterminate,PendingIntent pendingIntent,int tag){
         Notification notification = createProgressNotification(context,name,msg,max,progress,indeterminate,pendingIntent);
         getManager(context).notify(tag,notification);
     }
 
+    /**
+     * 创建一个进度条消息
+     * @param context 上下文
+     * @param name 标题
+     * @param msg 详细
+     * @param max 最大进度值
+     * @param progress 当前进度
+     * @param indeterminate 是否循环滚动
+     * @param pendingIntent 点击跳转意图
+     * @return 返回消息本身
+     */
     public static Notification createProgressNotification(Context context,String name,String msg,int max, int progress, boolean indeterminate,PendingIntent pendingIntent){
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
         builder.setContentTitle(name)
@@ -39,16 +61,26 @@ public class NotificationUtil {
 
     /**
      * 显示一个消息
-     * @param context
-     * @param name
-     * @param msg
-     * @param pendingIntent
-     * @param tag
+     * @param context 上下文
+     * @param name 标题
+     * @param msg 消息内容
+     * @param pendingIntent 点击跳转意图
+     * @param tag 消息更新或清除
      */
     public static void showMsgNotification(Context context,String name,String msg,Bitmap img,PendingIntent pendingIntent,int tag){
-        getManager(context).notify(tag,createMsgNotification(context,name,msg,img,pendingIntent));
+        Notification notification = createMsgNotification(context,name,msg,img,pendingIntent);
+        notification.defaults = Notification.DEFAULT_ALL;
+        getManager(context).notify(tag,notification);
     }
 
+    /**
+     * 创建一个普通消息
+     * @param context 上下文
+     * @param name 标题
+     * @param msg 消息内容
+     * @param pendingIntent 点击跳转意图
+     * @return
+     */
     public static Notification createMsgNotification(Context context, String name, String msg, Bitmap img, PendingIntent pendingIntent){
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
         builder.setContentTitle(name)
@@ -61,6 +93,15 @@ public class NotificationUtil {
                 .setContentIntent(pendingIntent)
                 .setTicker(name+":"+msg);
         return builder.build();
+    }
+
+    /**
+     * 关闭某一个消息
+     * @param context 上下文
+     * @param tag 标签
+     */
+    public static void cancel(Context context,int tag){
+        getManager(context).cancel(tag);
     }
 
     /**
