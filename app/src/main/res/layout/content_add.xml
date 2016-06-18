@@ -49,25 +49,37 @@
                 android:digits="0123456789."
                 android:imeOptions="actionNext"/>
         </android.support.design.widget.TextInputLayout>
-        <RadioGroup
+        <LinearLayout
+            android:id="@+id/add_cashier_type_layout"
             android:visibility="gone"
-            android:id="@+id/cashier_type"
-            android:contentDescription="类型"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <RadioButton
-                android:id="@+id/cashier_type_expenditure"
+            <RadioGroup
+                android:id="@+id/add_cashier_type"
+                android:contentDescription="类型"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="支出"
-                android:checked="true"/>
-            <RadioButton
-                android:id="@+id/cashier_type_income"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/cashier_type_expenditure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="支出"
+                    android:checked="true"/>
+                <RadioButton
+                    android:id="@+id/cashier_type_income"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="收入"/>
+            </RadioGroup>
+            <android.support.v7.widget.AppCompatSpinner
+                android:minWidth="50dp"
+                android:id="@+id/add_cashier_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="收入"/>
-        </RadioGroup>
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

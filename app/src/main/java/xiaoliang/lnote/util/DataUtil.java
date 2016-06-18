@@ -9,6 +9,8 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Created by Administrator on 2016/6/16.
@@ -16,6 +18,8 @@ import java.io.FileOutputStream;
  */
 
 public class DataUtil {
+
+    private static ExecutorService cachedThreadPool;
 
     public static boolean exists(Context context){
         File file=new File(getDataPath(context));
@@ -77,4 +81,13 @@ public class DataUtil {
         void progress(long all, long accomplish, double pro);
     }
 
+    /**
+     * 使用线程池执行任务
+     * @param runnable
+     */
+    public static synchronized void execute(Runnable runnable){
+        if(cachedThreadPool==null)
+            cachedThreadPool = Executors.newCachedThreadPool();
+        cachedThreadPool.execute(runnable);
+    }
 }
