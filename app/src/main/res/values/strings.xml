@@ -4,6 +4,7 @@
     <string name="title_activity_add">记一笔</string>
     <string name="title_activity_about">关于</string>
     <string name="title_activity_add_type">添加类型</string>
+    <string name="title_activity_amount_status">类型管理</string>
     <string name="copyright">designed by Mr-XiaoLiang\nmade by Mr-XiaoLiang</string>
 
     <string name="add_hint_title">提示</string>

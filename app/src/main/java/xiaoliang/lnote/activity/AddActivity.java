@@ -39,6 +39,9 @@ import xiaoliang.lnote.adapter.AmountStatusSpinnerAdapter;
 import xiaoliang.lnote.bean.AmountStatusBean;
 import xiaoliang.lnote.util.SharedPreferencesUtil;
 
+/**
+ * 记一笔，添加一个记录
+ */
 public class AddActivity extends BaseActivity implements View.OnClickListener,AppCompatSpinner.OnItemSelectedListener {
 
     private TextView dateText,timeText;

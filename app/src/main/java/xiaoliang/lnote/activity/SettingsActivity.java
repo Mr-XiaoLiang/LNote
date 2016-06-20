@@ -71,7 +71,7 @@ public class SettingsActivity extends BaseActivity implements Switch.OnCheckedCh
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.setting_label_management:
-                Alert("还没有写这个功能，所以弹出一句话，给你看看。这不是bug，只是功能没写！");
+                startActivity(new Intent(this,AmountStatusActivity.class));
                 break;
             case R.id.setting_output_data:
 //                checkOutput();
