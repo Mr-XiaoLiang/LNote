@@ -27,7 +27,7 @@ public class DataUtil {
     }
 
     public static String getDataPath(Context context){
-        DatabaseHelper databaseHelper = new DatabaseHelper(context);
+        DatabaseHelper databaseHelper = DatabaseHelper.Helper(context);
         SQLiteDatabase database = databaseHelper.getWritableDatabase();
         return database.getPath();
     }
@@ -37,7 +37,7 @@ public class DataUtil {
         try {
             if(!exists(context))
                 return false;
-            DatabaseHelper databaseHelper = new DatabaseHelper(context);
+            DatabaseHelper databaseHelper = DatabaseHelper.Helper(context);
             SQLiteDatabase database = databaseHelper.getWritableDatabase();
             String filePath = database.getPath();
             String outPath = Environment.getExternalStorageDirectory().getPath();

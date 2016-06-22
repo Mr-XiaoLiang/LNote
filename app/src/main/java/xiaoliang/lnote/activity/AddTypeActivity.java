@@ -1,7 +1,10 @@
 package xiaoliang.lnote.activity;
 
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.AppCompatAutoCompleteTextView;
 import android.support.v7.widget.Toolbar;
@@ -15,6 +18,8 @@ import android.view.View;
 import android.widget.SeekBar;
 
 import xiaoliang.lnote.R;
+import xiaoliang.lnote.util.DataUtil;
+import xiaoliang.lnote.util.DatabaseHelper;
 import xiaoliang.lnote.util.TextToColor;
 
 public class AddTypeActivity extends BaseActivity implements SeekBar.OnSeekBarChangeListener,TextWatcher {
@@ -60,12 +65,7 @@ public class AddTypeActivity extends BaseActivity implements SeekBar.OnSeekBarCh
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.menu_done:
-                new AlertDialog.Builder(this)
-                        .setTitle(R.string.add_hint_title)
-                        .setMessage("你点了确定，然而什么也没有发生！\n因为我还没有做提交方法。")
-                        .setCancelable(true)
-                        .setPositiveButton("知道了",null)
-                        .show();
+                add();
                 break;
             case R.id.menu_refresh:
                 if(TextUtils.isEmpty(nameText.getText().toString())){
@@ -77,6 +77,53 @@ public class AddTypeActivity extends BaseActivity implements SeekBar.OnSeekBarCh
         }
         return super.onOptionsItemSelected(item);
     }
+
+    private void add(){
+        String name = nameText.getText().toString();
+        if(TextUtils.isEmpty(name)){
+            nameText.setError("请输入内容");
+        }else{
+            Alert("提示", "确定提交“" + name + "”吗？", 0, true, "提交", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    submitData();
+                }
+            });
+        }
+    }
+
+    private void submitData(){
+        DataUtil.execute(new Submit(color,nameText.getText().toString()));
+    }
+
+    private class Submit implements Runnable{
+
+        private int c;
+        private String n;
+
+        public Submit(int c, String n) {
+            this.c = c;
+            this.n = n;
+        }
+
+        @Override
+        public void run() {
+            DatabaseHelper.addAmountStatus(AddTypeActivity.this,c,n);
+            handler.sendEmptyMessage(200);
+        }
+    }
+
+    private Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what){
+                case 200:
+                    finish();
+                    break;
+            }
+            super.handleMessage(msg);
+        }
+    };
 
     private void forColor(String text){
         showColor(TextToColor.format(text));
@@ -114,6 +161,7 @@ public class AddTypeActivity extends BaseActivity implements SeekBar.OnSeekBarCh
     public void onTextChanged(CharSequence s, int start, int before, int count) {
         if(TextUtils.isEmpty(s.toString())){
             showColor(Color.TRANSPARENT);
+            nameText.setError(null);
             return;
         }
         forColor(s.toString());

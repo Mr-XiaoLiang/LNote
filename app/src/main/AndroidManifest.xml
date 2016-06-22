@@ -21,6 +21,7 @@
         <activity android:name=".activity.AddTypeActivity" />
         <activity android:name=".activity.SettingsActivity"/>
         <activity android:name=".activity.AboutActivity" />
+        <activity android:name=".activity.AmountStatusActivity" />
         <service
             android:label="@string/ds_service_label"
             android:name=".service.DataSyncService"
