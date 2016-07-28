@@ -20,7 +20,7 @@ import xiaoliang.lnote.service.LApplication;
 import xiaoliang.lnote.util.SharedPreferencesUtil;
 
 /**
- * Created by Administrator on 2016/6/13.
+ * Created by LiuJ on 2016/6/13.
  * 所有页面的基类
  */
 

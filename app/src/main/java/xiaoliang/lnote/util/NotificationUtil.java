@@ -10,7 +10,7 @@ import android.support.v7.app.NotificationCompat;
 import xiaoliang.lnote.R;
 
 /**
- * Created by Administrator on 2016/6/17.
+ * Created by LiuJ on 2016/6/17.
  * 状态栏消息创建工具
  */
 

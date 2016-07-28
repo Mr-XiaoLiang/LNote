@@ -8,7 +8,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 /**
- * Created by Administrator on 2016/6/20.
+ * Created by LiuJ on 2016/6/20.
  * Recycler的Item点击事件，改自：http://blog.csdn.net/liaoinstan/article/details/51200600
  */
 

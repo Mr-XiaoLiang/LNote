@@ -26,7 +26,7 @@ import xiaoliang.lnote.util.DataUtil;
 import xiaoliang.lnote.util.DatabaseHelper;
 
 /**
- * Created by Administrator on 2016/6/20.
+ * Created by LiuJ on 2016/6/20.
  * 金额类型管理页面
  */
 

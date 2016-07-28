@@ -8,7 +8,7 @@ import java.util.Set;
 import xiaoliang.lnote.R;
 
 /**
- * Created by Administrator on 2016/6/14.
+ * Created by LiuJ on 2016/6/14.
  * 数据存储类
  */
 public class SharedPreferencesUtil {

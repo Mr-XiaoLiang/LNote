@@ -25,7 +25,7 @@ import xiaoliang.lnote.R;
 import xiaoliang.lnote.util.SharedPreferencesUtil;
 
 /**
- * Created by Administrator on 2016/6/14.
+ * Created by LiuJ on 2016/6/14.
  * 上下文用于快速获取信息
  */
 public class LApplication extends Application {

@@ -14,7 +14,7 @@ import android.view.animation.Interpolator;
 import android.view.animation.TranslateAnimation;
 
 /**
- * Created by Administrator on 2016/6/13.
+ * Created by LiuJ on 2016/6/13.
  * 页面滚动就隐藏浮动按钮（暂弃）
  */
 

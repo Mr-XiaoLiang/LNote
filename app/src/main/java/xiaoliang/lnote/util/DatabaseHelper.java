@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import xiaoliang.lnote.bean.AmountStatusBean;
 
 /**
- * Created by Administrator on 2016/6/16.
+ * Created by LiuJ on 2016/6/16.
  * 数据库帮助类
  */
 

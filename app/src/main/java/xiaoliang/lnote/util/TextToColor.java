@@ -5,7 +5,7 @@ import android.graphics.Color;
 import java.security.MessageDigest;
 
 /**
- * Created by Administrator on 2016/6/15.
+ * Created by LiuJ on 2016/6/15.
  * 自定义的文字转颜色算法
  */
 

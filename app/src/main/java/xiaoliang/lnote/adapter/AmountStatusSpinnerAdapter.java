@@ -13,7 +13,7 @@ import xiaoliang.lnote.R;
 import xiaoliang.lnote.bean.AmountStatusBean;
 
 /**
- * Created by Administrator on 2016/6/18.
+ * Created by LiuJ on 2016/6/18.
  * 金额类型的下拉列表适配器
  */
 public class AmountStatusSpinnerAdapter extends BaseAdapter{

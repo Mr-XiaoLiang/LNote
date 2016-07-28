@@ -1,7 +1,7 @@
 package xiaoliang.lnote.bean;
 
 /**
- * Created by Administrator on 2016/6/18.
+ * Created by LiuJ on 2016/6/18.
  * 金额类型
  */
 public class AmountStatusBean {

@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
@@ -20,6 +21,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import xiaoliang.lnote.R;
+import xiaoliang.lnote.util.CircularRevealUtil;
 import xiaoliang.lnote.util.SharedPreferencesUtil;
 
 public class HomeActivity extends BaseActivity implements View.OnClickListener,SwipeRefreshLayout.OnRefreshListener,SearchView.OnQueryTextListener {
@@ -60,6 +62,9 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener,S
             case R.id.menu_finish:
                 finish();
                 return true;
+//            case R.id.menu_search:
+//                CircularRevealUtil.startAnimator(searchView,searchView.getRight(),(searchView.getBottom()+searchView.getTop())/2,0,searchView.getRight()-searchView.getLeft(),500);
+//                break;
         }
         return super.onOptionsItemSelected(item);
     }

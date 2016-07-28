@@ -5,7 +5,6 @@ import android.content.ClipboardManager;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
@@ -63,7 +62,8 @@ public class AboutActivity extends BaseActivity implements View.OnClickListener 
     private void onVerClick(){
         copyrightInt++;
         if(copyrightInt>10){
-            show("恭喜你，解锁了神秘的版本号彩蛋！\n您当前的版本号是 "+version);
+            Alert("恭喜你，解锁了神秘的版本号彩蛋！\n您当前的版本号是 "+version);
+            copyrightInt = 0;
         }
     }
 
@@ -87,26 +87,26 @@ public class AboutActivity extends BaseActivity implements View.OnClickListener 
         imgInt++;
         allInt++;
         if(imgInt==1&&allInt>imgInt&&!firstOpen){
-            show("您已连续点击LOGO "+allInt+"下\n真棒！请再接再厉！\n截屏分享给朋友，PK一下吧！");
+            Alert("您已连续点击LOGO "+allInt+"下\n真棒！请再接再厉！\n截屏分享给朋友，PK一下吧！");
         }else
         if(imgInt==10&&firstOpen){
-            show("恭喜你，解锁了神奇的彩蛋，点击更多次获取更多的彩蛋吧！");
+            Alert("恭喜你，解锁了神奇的彩蛋，点击更多次获取更多的彩蛋吧！");
             SharedPreferencesUtil.put(this,"FIRSTOPEN",false);
         }else
         if ((imgInt<100&&imgInt % 10 == 0)||(imgInt<1000&&imgInt % 100 == 0)||(imgInt % 1000 == 0)) {
-            show("恭喜你，达成成就:\n"+imgInt+"次LOGO连续点击！\n你总计已经点击"+allInt+"次了。希望再接再厉");
+            Alert("恭喜你，达成成就:\n"+imgInt+"次LOGO连续点击！\n你总计已经点击"+allInt+"次了。希望再接再厉");
         }
     }
 
-    private void show(String s) {
-        new AlertDialog.Builder(this)
-                .setTitle(R.string.add_hint_title)
-                .setCancelable(true)
-                .setMessage(s)
-                .setPositiveButton("知道了", null)
-                .setIcon(R.mipmap.ic_launcher)
-                .show();
-    }
+//    private void show(String s) {
+//        new AlertDialog.Builder(this)
+//                .setTitle(R.string.add_hint_title)
+//                .setCancelable(true)
+//                .setMessage(s)
+//                .setPositiveButton("知道了", null)
+//                .setIcon(R.mipmap.ic_launcher)
+//                .show();
+//    }
     private void copy() {
         myClip = ClipData.newPlainText("text", GitPath);
         myClipboard.setPrimaryClip(myClip);
